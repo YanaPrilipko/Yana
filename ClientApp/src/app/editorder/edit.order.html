@@ -1,0 +1,33 @@
+<h1>Edit order</h1>
+
+<div class="row" style="margin-top: 70px; margin-bottom: 30px;">
+  <div class="col-md-5" ng-if="inited">
+    <p>Data оf Arrival :</p>
+    <input [(ngModel)]="order.dataOfArrival" type="text">
+  </div>
+
+  <div class="col-md-5" ng-if="inited">
+    <p>Data оf Departure:</p>
+    <input [ngModel]="order.dataOfDeparture" type="text">
+  </div>
+
+    <div class="col-md-5" ng-if="inited">
+      <p>House:</p>
+      <select [(ngModel)]="order.houseId">
+        <option *ngFor="let h of houseList" [value]="h.id">{{ h.description }}</option>
+      </select>
+    </div>
+
+    <div class="col-md-5" ng-if="inited">
+      <p>Customer:</p>
+      <select [(ngModel)]="order.customerId">
+        <option *ngFor="let c of customerList" [value]="c.id">{{ c.lastName }}</option>
+      </select>
+    </div>
+
+    <div class="col-md-5" ng-if="inited">
+      <p>Description:</p>
+      <input [(ngModel)]="order.description" type="text" placeholder="Description">
+    </div>
+</div>
+<button class="btn btn-primary"  (click)="update()">Update</button>

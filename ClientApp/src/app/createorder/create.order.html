@@ -1,0 +1,37 @@
+<h1>Create Order</h1>
+
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="order.DataOfArrival" type="date" placeholder="Data of Arrival">
+    <label [hidden]="!order.DataOfArrival">Data of Arrival</label>
+  </div>
+</div>
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="order.DataOfDeparture" type="date" placeholder="DataOfDeparture">
+    <label [hidden]="!order.DataOfDeparture">Data of Departure</label>
+  </div>
+</div>
+<div class="box_input">
+  <label><b>House</b></label>
+  <select [(ngModel)]="order.HouseId" (ngModelChange)="onCountrySelect($event)">
+    <option *ngFor="let c of houseList" value="{{ c.id }}">{{ c.description }}</option>
+  </select>
+</div>
+
+<div class="box_input">
+  <label><b>Customer</b></label>
+  <select [(ngModel)]="order.CustomerId" (ngModelChange)="onCustomerSelect($event)">
+    <option *ngFor="let c of customerList" value="{{ c.id }}">{{ c.lastName }}</option>
+  </select>
+</div>
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="order.Description" type="text" placeholder="Description">
+    <label [hidden]="!order.Description">Description</label>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="create()">Create</button>
+
+

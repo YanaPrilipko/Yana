@@ -1,0 +1,17 @@
+<h1>Edit customer</h1>
+
+<div class="row" style="margin-top: 70px; margin-bottom: 30px;">
+  <div class="col-md-5">
+    <p>LastName :</p>
+    <input [(ngModel)]="customer.lastName" type="text" placeholder="Last Name">
+  </div>
+  <div class="col-md-5">
+    <p>Telefon :</p>
+    <input [(ngModel)]="customer.telefon" type="text" placeholder="Telefon">
+  </div>
+</div>
+<button class="btn btn-primary" (click)="update()">Update</button>
+
+
+
+

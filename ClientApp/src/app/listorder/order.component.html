@@ -1,0 +1,33 @@
+<h1 id="tableLabel">Order</h1>
+
+<input type="button" value="Create Order" [routerLink]="['/createorder']" />
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Data of Arrival</th>
+      <th>Data of Departure</th>
+      <th>House</th>
+      <th>Customer</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>
+        <a [routerLink]="['/editorder', forecast.id]">R-{{forecast.id}}</a>
+      </td>
+      <td>{{ forecast.dataOfArrival }}</td>
+      <td>{{ forecast.dataOfDeparture }}</td>
+      <td>{{ forecast.house.description }}</td>
+      <td>{{ forecast.customer.lastName }}</td>
+      <td>{{ forecast.description }}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="deleteOrder(forecast.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

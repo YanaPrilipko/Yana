@@ -1,0 +1,22 @@
+<h1>Edit house</h1>
+
+
+<div class="row" style="margin-top: 70px; margin-bottom: 30px;">
+  <div class="col-md-5">
+    <p>Quantity :</p>
+    <input [(ngModel)]="house.quantity" type="text" placeholder="Number of beds">
+  </div>
+  <div class="col-md-5">
+    <p>Price :</p>
+    <input [(ngModel)]="house.price" type="text" placeholder="Price">
+  </div>
+  <div class="col-md-5">
+    <p>Description:</p>
+    <input [(ngModel)]="house.description" type="text" placeholder="House Number">
+  </div>
+</div>
+<button class="btn btn-primary"  (click)="update()">Update</button>
+
+
+
+

@@ -1,0 +1,21 @@
+<h1>Create house</h1>
+
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="house.quantity" type="number" placeholder="Number of beds">
+    <label [hidden]="!house.quantity">Number of beds</label>
+  </div>
+</div>
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="house.price" type="number" placeholder="Price">
+    <label [hidden]="!house.price">Price</label>
+  </div>
+</div>
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="house.description" type="text" placeholder="House Number">
+    <label [hidden]="!house.description">House Number</label>
+  </div>
+</div>
+<button class="btn btn-primary"  (click)="create()">Create</button>

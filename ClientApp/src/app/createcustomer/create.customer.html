@@ -1,0 +1,16 @@
+<h1>Create customer</h1>
+
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="customer.lastName" type="text"  placeholder="Last Name">
+    <label [hidden]="!customer.lastName">Last Name</label>
+  </div>
+</div>
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="customer.telefon" type="text" placeholder="(XXX)-XXX-XXXX">
+    <label [hidden]="!customer.telefon">Telefon</label>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="create()">Create</button>

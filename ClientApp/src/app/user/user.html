@@ -1,0 +1,16 @@
+<h1>Login to the account</h1>
+
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="user.email" type="text"  placeholder="Email">
+    <label [hidden]="!user.email">Email</label>
+  </div>
+</div>
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="user.password" type="password" placeholder="Password">
+    <label [hidden]="!user.password">Password</label>
+  </div>
+</div>
+
+<button class="btn btn-primary"  (click)="login(user)">Login</button>

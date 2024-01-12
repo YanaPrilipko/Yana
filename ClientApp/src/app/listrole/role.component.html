@@ -1,0 +1,25 @@
+<h1 id="tableLabel">Role</h1>
+
+
+<input type="button" value="Create role" [routerLink]="['/createrole']" />
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>
+        <a [routerLink]="['/editrole', forecast.id]">R-{{forecast.id}}</a>
+      </td>
+
+      <td>{{ forecast.name}}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="deleteRole(forecast.id)">Видалити лот</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

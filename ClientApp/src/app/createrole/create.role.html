@@ -1,0 +1,9 @@
+<h1>Create role</h1>
+
+<div class="box_input">
+  <div class="input">
+    <input [(ngModel)]="role.name" type="text" placeholder="Role">
+    <label [hidden]="!role.name">Name</label>
+  </div>
+</div>
+<button class="btn btn-primary"   (click)="create()">Create</button>

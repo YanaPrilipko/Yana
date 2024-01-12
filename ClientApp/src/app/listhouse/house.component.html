@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Hotel</h1>
+
+<input type="button" class="createhouse"  value="Create house" [routerLink]="['/createhouse']" />
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Number of beds</th>
+      <th>Price</th>
+      <th>House Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>
+        <a [routerLink]="['/edithouse', forecast.id]">R-{{forecast.id}}</a>
+      </td>
+      <td>{{ forecast.quantity }}</td>
+      <td>{{ forecast.price }}</td>
+      <td>{{ forecast.description }}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="deleteHouse(forecast.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
